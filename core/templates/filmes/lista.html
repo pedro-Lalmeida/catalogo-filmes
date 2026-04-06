@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+  <h1>Filmes Disponíveis</h1>
+  <ul>
+    {% for filme in filmes %}
+      <li>
+        <strong>{{ filme.titulo }}</strong> - {{ filme.descricao }} <br>
+        <img src="{{ filme.imagem.url }}" alt="Capa de {{ filme.titulo }}" width="120">
+        <p>lançado em: {{ filme.ano_lancamento }}</p>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
